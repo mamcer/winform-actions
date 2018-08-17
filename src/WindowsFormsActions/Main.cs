@@ -92,9 +92,9 @@ namespace WindowsFormsActions
 
         private void tabPage2_DragDrop(object sender, DragEventArgs e)
         {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            int fileAdded = 0;
-            foreach (string filePath in files)
+            var files = (string[]) e.Data.GetData(DataFormats.FileDrop);
+            var fileAdded = 0;
+            foreach (var filePath in files)
             {
                 txtConsole.Text += Environment.NewLine + filePath;
             }
@@ -102,8 +102,8 @@ namespace WindowsFormsActions
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            int res = 10 / i;
+            var i = 0;
+            var res = 10 / i;
         }
 
         private void button2_Click(object sender, EventArgs e)

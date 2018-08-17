@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace WindowsFormsActions
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        ///     The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -17,9 +18,9 @@ namespace WindowsFormsActions
             Application.Run(new Main());
         }
 
-        static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+        private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            Error error = new Error(e.Exception);
+            var error = new Error(e.Exception);
             error.ShowDialog();
         }
     }
